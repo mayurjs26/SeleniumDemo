@@ -4,11 +4,9 @@ node {
 		}
 	stage ('Build'){
     	dir("comtest") {
-       sh "pwd"
 	   sh "mvn clean install"
        }
        	dir("comtest/target") {
-       sh "pwd"
 	   sh "java -jar com.test-1.0-SNAPSHOT.jar"
        }
 		}
