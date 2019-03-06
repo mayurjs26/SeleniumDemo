@@ -1,11 +1,11 @@
 package com.test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+        import org.openqa.selenium.WebDriver;
+        import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Selenium {
 
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver","F:\\Experitest\\expiritest\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","F:\\Jenkins\\workspace\\chromedriver.exe"); // <-- Change this path
         WebDriver driver = new ChromeDriver();
         String baseUrl = "https://experitest.com/free-trial/";
         String expectedTitle = "Free trial";
@@ -13,9 +13,9 @@ public class Selenium {
         driver.get(baseUrl);
         actualTitle = driver.getTitle();
         if (actualTitle.contentEquals(expectedTitle)){
-            System.out.println("Test Passed!");
+            System.out.println("TEST PASSED!");
         } else {
-            System.out.println("Test Failed");
+            System.out.println("TEST FAILED");
         }
         driver.close();
     }
