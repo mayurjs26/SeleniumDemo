@@ -1,7 +1,6 @@
 node {
 	stage ('SCM checkout'){
-	    checkout([$class: 'GitSCM', branches: [[name: '*/master']], 
-        userRemoteConfigs: [[url: 'https://gitlab.com/mbabilo/experitest.git']]])
+		git "https://gitlab.com/mbabilo/experitest"
 		}
 	stage ('Build'){
     	dir("comtest") {
